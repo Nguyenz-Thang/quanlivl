@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($result->num_rows > 0) {
         $_SESSION['username'] = $username;
-        header("Location: dashboard.html");
+        header("Location: dashboard.php");
     } else {
         echo "Tên đăng nhập hoặc mật khẩu không đúng";
     }
