@@ -121,22 +121,23 @@ $history = getInventoryHistory();
     <title>Nhập và Xuất Kho</title>
     <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4;
+        background-color: #eef2f7;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     header {
-        background-color: #333;
+        background-color: #006064;
         width: 100%;
         color: #fff;
-        padding: 1rem 0;
+        padding: 1.5rem 0;
         text-align: center;
         position: relative;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     header img {
@@ -144,11 +145,13 @@ $history = getInventoryHistory();
         left: 10px;
         top: 50%;
         transform: translateY(-50%);
+        width: 60px;
     }
 
     header h1 {
         margin: 0;
-        margin-left: 50px;
+        margin-left: 70px;
+        font-size: 1.8rem;
     }
 
     .container {
@@ -157,8 +160,14 @@ $history = getInventoryHistory();
         margin: 2rem auto;
         background-color: #fff;
         padding: 2rem;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+    }
+
+    h2 {
+        color: #333;
+        border-bottom: 2px solid #006064;
+        padding-bottom: 0.5rem;
     }
 
     form {
@@ -172,33 +181,48 @@ $history = getInventoryHistory();
     label {
         display: block;
         margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: #555;
     }
 
     input[type="number"],
     select,
     input[type="text"] {
         width: 100%;
-        padding: 0.5rem;
+        padding: 0.8rem;
         box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        transition: border-color 0.3s;
+    }
+
+    input[type="number"]:focus,
+    select:focus,
+    input[type="text"]:focus {
+        border-color: #006064;
+        outline: none;
     }
 
     button {
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1.5rem;
         color: #fff;
-        background-color: #6699CC;
+        background-color: #006064;
         border: none;
-        border-radius: 4px;
+        border-radius: 6px;
         cursor: pointer;
+        transition: background-color 0.3s;
+        margin-right: 0.5rem;
     }
 
     button:hover {
-        background-color: #0066CC;
+        background-color: #004d40;
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     table,
@@ -209,21 +233,48 @@ $history = getInventoryHistory();
 
     th,
     td {
-        padding: 0.5rem;
+        padding: 0.75rem;
         text-align: left;
     }
 
     th {
-        background-color: #f2f2f2;
+        background-color: #f4f4f4;
+        color: #333;
+        border-bottom: 2px solid #006064;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
     }
 
     .nhap {
-        background-color: #CCFF33;
+        background-color: #e0f7fa;
+        color: #006064;
     }
 
     .xuat {
-        background-color: #FF3333;
-        color: white;
+        background-color: #ffcdd2;
+        color: #b71c1c;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .action-buttons button {
+        padding: 0.5rem 1rem;
+        color: #fff;
+        background-color: #ff7043;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .action-buttons button:hover {
+        background-color: #d84315;
     }
     </style>
     <script>
@@ -247,7 +298,7 @@ $history = getInventoryHistory();
 
 <body>
     <header>
-        <a href="dashboard.php"><img src="./img/qdd.png" alt="anh" width="100px"></a>
+        <a href="dashboard.php"><img src="./img/qdd.png" alt="Logo"></a>
         <h1>Nhập và Xuất Kho</h1>
     </header>
 
@@ -279,7 +330,7 @@ $history = getInventoryHistory();
             <thead>
                 <tr>
                     <th>Loại</th>
-                    <th>Vật liệu</th>
+                    <th>Vật Liệu</th>
                     <th>Số Lượng</th>
                     <th>Đơn Vị</th>
                     <th>Kho</th>
@@ -298,9 +349,11 @@ $history = getInventoryHistory();
             </tbody>
         </table>
     </div>
-    <form method="POST">
-        <button type="submit" name="clear_history">Xóa Lịch Sử</button>
-    </form>
+    <div class="action-buttons">
+        <form method="POST">
+            <button type="submit" name="clear_history">Xóa Lịch Sử</button>
+        </form>
+    </div>
 </body>
 
 </html>

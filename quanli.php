@@ -98,37 +98,34 @@ $materials = getMaterials();
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4;
+        background-color: #eef2f7;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     header {
-        background-color: #333;
+        background-color: #006064;
         width: 100%;
         color: #fff;
-        padding: 1rem 0;
+        padding: 1.5rem 0;
         text-align: center;
         position: relative;
-        /* Thêm thuộc tính position */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     header img {
         position: absolute;
-        /* Thêm thuộc tính position */
         left: 10px;
-        /* Điều chỉnh vị trí sang bên trái */
         top: 50%;
-        /* Để hình ảnh căn giữa theo chiều dọc */
         transform: translateY(-50%);
-        /* Điều chỉnh vị trí dọc */
+        width: 60px;
     }
 
     header h1 {
         margin: 0;
-        margin-left: 50px;
-        /* Thêm khoảng cách từ hình ảnh đến tiêu đề */
+        margin-left: 70px;
+        font-size: 1.8rem;
     }
 
     .container {
@@ -137,8 +134,8 @@ $materials = getMaterials();
         margin: 2rem auto;
         background-color: #fff;
         padding: 2rem;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
     }
 
     table {
@@ -160,7 +157,7 @@ $materials = getMaterials();
     }
 
     th {
-        background-color: #f2f2f2;
+        background-color: #f4f4f4;
     }
 
     form {
@@ -174,39 +171,58 @@ $materials = getMaterials();
     form label {
         display: block;
         margin-bottom: 0.5rem;
+        font-weight: bold;
     }
 
     form input[type="text"],
     form input[type="number"] {
         width: 100%;
-        padding: 0.5rem;
+        padding: 0.8rem;
         box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        transition: border-color 0.3s;
+    }
+
+    form input[type="text"]:focus,
+    form input[type="number"]:focus {
+        border-color: #006064;
+        outline: none;
     }
 
     button {
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1.5rem;
         color: #fff;
-        background-color: #6699CC;
+        background-color: #006064;
         border: none;
-        border-radius: 4px;
+        border-radius: 6px;
         cursor: pointer;
-        overflow: hidden;
+        transition: background-color 0.3s;
     }
 
     button:hover {
-        background-color: #0066CC;
+        background-color: #004d40;
     }
 
     .action-buttons {
         display: flex;
         gap: 0.5rem;
     }
+
+    .action-buttons button {
+        background-color: #ff7043;
+        transition: background-color 0.3s;
+    }
+
+    .action-buttons button:hover {
+        background-color: #d84315;
+    }
     </style>
 </head>
 
 <body>
     <header>
-        <a href="dashboard.php"><img src="./img/qdd.png" alt="anh" width="100px"></a>
+        <a href="dashboard.php"><img src="./img/qdd.png" alt="Logo"></a>
         <h1>Quản Lý Vật Liệu</h1>
     </header>
 
