@@ -210,12 +210,12 @@ $materials = getMaterials();
     }
 
     .action-buttons button {
-        background-color: #ff7043;
+        background-color: #006064;
         transition: background-color 0.3s;
     }
 
     .action-buttons button:hover {
-        background-color: #d84315;
+        background-color: #006050;
     }
     </style>
 </head>

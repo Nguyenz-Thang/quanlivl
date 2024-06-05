@@ -59,7 +59,7 @@
     }
 
     .custom-button {
-        background-color: #ff7043;
+        background-color: #006064;
         border: none;
         color: white;
         padding: 20px 40px;
@@ -74,7 +74,7 @@
     }
 
     .custom-button:hover {
-        background-color: #ff8a65;
+        background-color: #006070;
         transform: translateY(-5px);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }

@@ -9,16 +9,17 @@
     <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
+        background-color: #f4f6f9;
         margin: 0;
         padding: 0;
     }
 
     header {
-        background-color: #333;
+        background-color: #006064;
         color: white;
-        padding: 10px 0;
+        padding: 15px 0;
         text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     nav ul {
@@ -30,7 +31,7 @@
     }
 
     nav ul li {
-        margin: 0 15px;
+        margin: 0 20px;
     }
 
     nav ul li a {
@@ -39,45 +40,63 @@
         font-weight: bold;
     }
 
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+
     main {
-        margin: 20px;
+        margin: 30px auto;
+        max-width: 900px;
     }
 
     .admin-section {
         background-color: white;
-        padding: 40px;
-        margin-bottom: 20px;
+        padding: 30px;
+        margin-bottom: 30px;
         border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .admin-section h2 {
         margin-top: 0;
+        font-size: 24px;
+        color: #333;
     }
 
     label {
         display: block;
-        margin: 10px 0 5px;
+        margin: 15px 0 5px;
+        font-weight: bold;
+        color: #555;
     }
 
     input[type="text"],
     input[type="password"],
     input[type="email"] {
         width: 100%;
-        padding: 8px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
         border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    form {
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     button {
         background-color: #4CAF50;
         color: white;
-        padding: 10px 15px;
+        padding: 12px 20px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
         font-size: 16px;
+        display: block;
+        margin: 0 auto;
     }
 
     button:hover {
@@ -88,6 +107,7 @@
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
+        background-color: white;
     }
 
     table,
@@ -98,8 +118,9 @@
 
     th,
     td {
-        padding: 8px;
+        padding: 12px;
         text-align: left;
+        font-size: 16px;
     }
 
     th {
@@ -112,6 +133,20 @@
 
     tbody tr:hover {
         background-color: #f1f1f1;
+    }
+
+    .delete-button {
+        background-color: #e74c3c;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .delete-button:hover {
+        background-color: #c0392b;
     }
     </style>
 </head>
@@ -166,11 +201,11 @@
                                     <td>{$row['username']}</td>
                                     <td>{$row['password']}</td>
                                     <td>{$row['email']}</td>
-                                    <td><button onclick=\"deleteUser('{$row['username']}')\">Xóa</button></td>
+                                    <td><button class='delete-button' onclick=\"deleteUser('{$row['username']}')\">Xóa</button></td>
                                   </tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='3'>Không có tài khoản nào</td></tr>";
+                        echo "<tr><td colspan='4'>Không có tài khoản nào</td></tr>";
                     }
                     ?>
                 </tbody>
